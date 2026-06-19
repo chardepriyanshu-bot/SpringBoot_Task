@@ -1,0 +1,9 @@
+package com.pc;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pc.entity.Doctor;
+
+public interface IDoctorRepository extends JpaRepository<Doctor, Long> {
+
+}

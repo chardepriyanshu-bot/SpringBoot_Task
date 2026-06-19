@@ -1,0 +1,57 @@
+package com.pc.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.entity.FootballPlayer;
+import com.pc.service.IFootballPlayerService;
+
+@Controller
+public class FootballPlayerController {
+	
+	@Autowired
+	private IFootballPlayerService service;
+	
+	public List<FootballPlayer> findByClub(String club) {
+		return repo.findByClub(club) ;
+	}
+
+	public List<FootballPlayer> findPlayersWithSalaryGreaterThan(Double salary) {
+		return repo.findPlayersWithSalaryGreaterThan(salary);
+	}
+
+	public List<FootballPlayer> findByPositionAndCountry(String position, String country) {
+		return repo.findByPositionAndCountry(position,country);
+	}
+
+	public List<FootballPlayer> findByNameStartsWith(String prefix) {
+		 return repo.findByNameStartsWith(prefix);
+	}
+
+	public List<FootballPlayer> findByJerseyNumberBetween(Integer start, Integer end) {
+		return repo.findByJerseyNumberBetween(start, end);
+	}
+
+	public Long countPlayersByCountry(String country) {
+		return repo.countPlayersByCountry(country);
+	}
+
+	public List<FootballPlayer> findHighestPaidPlayers() {
+		return repo.findHighestPaidPlayers();
+	}
+	
+	public int updateSalary(Long id, Double salary) {
+		return repo.updateSalary(id, salary);
+	}
+
+	public int deleteByClub(String club) {
+		return repo.deleteByClub(club);
+	}
+
+	public List<Object[]> getPlayerNameAndClub() {	
+		return repo.getPlayerNameAndClub();
+	}
+
+}

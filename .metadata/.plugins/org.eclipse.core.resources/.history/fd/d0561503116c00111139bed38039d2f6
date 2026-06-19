@@ -1,0 +1,99 @@
+package com.pc.runner;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.FootballPlayerController;
+
+@Component
+public class FootballPlayerRunnerTest implements CommandLineRunner{
+	
+	@Autowired
+	private FootballPlayerController ctrl;
+
+	@Override
+	public void run(String... args) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		try {
+			boolean isContinue=true;
+			do {
+				
+				System.out.println("""
+					1. find By Club
+					2. find Players With Salary Greater Than
+					3. find By Position And Country
+					4. find By Name Starts With 
+					5. find By Jersey Number Between
+					6. count Players By Country
+					7. find Highest Paid Players
+					8. update Salary
+					9. delete By Club
+					10. get PlayerName And Club
+		
+					Enter your choice number:	
+						""");
+				Integer choice=Integer.parseInt(sc.nextLine());
+				
+				switch(choice) {
+				case 1:
+					System.out.println("Enter Club Name:");
+					ctrl.getByClub(sc.nextLine());
+					break;
+				case 2:
+					System.out.println("Enter salary:");
+					ctrl.getPlayersWithSalaryGreaterThan(Double.parseDouble(sc.nextLine()));
+					break;
+				case 3:
+					System.out.println("Enter Position:");
+					String position =sc.nextLine();
+					System.out.println("Enter Country:");
+					String country =sc.nextLine();
+					ctrl.getByPositionAndCountry(position,country);
+					break;
+				case 4:
+					System.out.println("Enter prefix:");
+					ctrl.getByNameStartsWith(sc.nextLine());
+					break;
+				case 5:
+					System.out.println("Enter start:");
+					int start=Integer.parseInt(sc.nextLine());
+					System.out.println("Enter end:");
+					int end=Integer.parseInt(sc.nextLine());
+					
+					ctrl.getByJerseyNumberBetween(start,end);
+					break;
+				case 6:
+					System.out.println("Enter Hospital Name:");
+					ctrl.findByHospitalNameLike(sc.nextLine());
+					break;
+				case 7:
+					System.out.println("Enter email ending with:");
+					ctrl.findByEmailEndingWith(sc.nextLine());
+					break;
+				case 8:
+					System.out.println("Enter Specialization starting with:");
+					ctrl.findBySpecializationStartingWith(sc.nextLine());
+					break;
+				default:
+					System.err.println("Invalid Number");	
+				}
+				
+				System.out.println("Do you want contine? (Y/N)");
+				char c=sc.nextLine().charAt(0);
+				if(Character.toUpperCase(c)=='N') isContinue=false;
+				
+			}while(isContinue);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		
+	}
+	
+	
+	
+}

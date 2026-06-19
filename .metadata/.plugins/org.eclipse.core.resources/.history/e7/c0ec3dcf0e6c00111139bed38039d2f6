@@ -1,0 +1,57 @@
+package com.pc.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.entity.FootballPlayer;
+import com.pc.service.IFootballPlayerService;
+
+@Controller
+public class FootballPlayerController {
+	
+	@Autowired
+	private IFootballPlayerService service;
+	
+	public void getByClub(String club) {
+		service.findByClub(club).forEach(System.out::println);
+	}
+
+	public void getPlayersWithSalaryGreaterThan(Double salary) {
+		service.findPlayersWithSalaryGreaterThan(salary).forEach(System.out::println);;
+	}
+
+	public void getByPositionAndCountry(String position, String country) {
+		service.findByPositionAndCountry(position,country).forEach(System.out::println);;
+	}
+
+	public void getByNameStartsWith(String prefix) {
+		 service.findByNameStartsWith(prefix).forEach(System.out::println);;
+	}
+
+	public void getByJerseyNumberBetween(Integer start, Integer end) {
+		service.findByJerseyNumberBetween(start, end).forEach(System.out::println);;
+	}
+
+	public void countPlayersByCountry(String country) {
+		System.out.println(service.countPlayersByCountry(country));;
+	}
+
+	public void findHighestPaidPlayers() {
+		service.findHighestPaidPlayers().forEach(System.out::println);;;
+	}
+	
+	public int updateSalary(Long id, Double salary) {
+		service.updateSalary(id, salary);
+	}
+
+	public int deleteByClub(String club) {
+		service.deleteByClub(club);
+	}
+
+	public void getPlayerNameAndClub() {	
+		service.getPlayerNameAndClub();
+	}
+
+}

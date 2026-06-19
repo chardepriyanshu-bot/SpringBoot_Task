@@ -1,0 +1,40 @@
+package com.pc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.service.ICourseService;
+
+@Controller
+public class CourseController {
+	
+	@Autowired
+	private ICourseService service;
+	
+	public void getByCategory(String category) {
+		service.getByCategory(category).forEach(System.out::println);
+	}
+	public void getByInstructorName(String instructorName) {
+		service.getByInstructorName(instructorName).forEach(System.out::println);
+	}
+	public void getByPriceLessThan(Double price) {
+		service.getByPriceLessThan(price).forEach(System.out::println);
+	}
+	public void getByPriceGreaterThan(Double price) {
+		service.getByPriceGreaterThan(price).forEach(System.out::println);
+	}
+	
+	public void getByDurationInHourGreater(Integer hour) {
+		service.getByDurationInHoursGreaterThan(hour).forEach(System.out::println);
+	}
+	public void getByRatingGreaterThanEqual(Double rating) {
+		service.getByRatingGreaterThanEqual(rating).forEach(System.out::println);
+	}
+	public void getByLanguage(String language) {
+		service.getByLanguage(language).forEach(System.out::println);;
+	}
+	public void getByCourseTitleContaining(String keyword) {
+		service.getByCourseTitleContaining(keyword).forEach(System.out::println);
+	}
+	
+}

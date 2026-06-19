@@ -1,0 +1,108 @@
+package com.pc.runner;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.DoctorController;
+
+@Component
+public class DoctorRunnerTest implements CommandLineRunner {
+
+	@Autowired
+	private DoctorController ctrl;
+	@Override
+	public void run(String... args) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		try {
+			boolean isContinue=true;
+			do {
+				
+				System.out.println("""
+					1. find By Doctor Name
+					2. find By SpecializationIn
+					3. find By Doctor Name Starting
+					4. find By Doctor Name Ending 
+					5. find By City
+					6. find By Hospital Name
+					7. find By Email Ending
+					8. find By Specialization Starting
+		
+					Enter your choice number:	
+						""");
+				Integer choice=Integer.parseInt(sc.nextLine());
+				
+				switch(choice) {
+				case 1:
+					System.out.println("Enter Doctor Name:");
+					ctrl.findByDoctorNameLike(sc.nextLine());
+					break;
+				case 2:
+					List<String> list=new LinkedList<>();
+					System.out.println("No. of Specialization want to enter:");
+					int size=Integer.parseInt(sc.nextLine());
+					System.out.println("Enter:");
+					for(int i=0;i<size;i++) {
+						list.add(sc.nextLine());
+					}
+					ctrl.findBySpecializationIn(list);
+					break;
+				case 3:
+					System.out.println("Enter Doctor Name:");
+					ctrl.findByDoctorNameStartingWith(sc.nextLine());
+					break;
+					break;
+				case 4:
+					ctrl.getAllMembers();
+					break;
+				case 5:
+					System.out.println("Enter Id:");
+					int id3= Integer.parseInt(sc.nextLine());
+					System.out.println("Enter name:");
+					String name=sc.nextLine();
+					System.out.println("Enter membership type:");
+					String memberShipType=sc.nextLine();
+					System.out.println("Enter Duration:");
+					int duration= Integer.parseInt(sc.nextLine());
+					System.out.println("Enter Fees:");
+					double fees= Double.parseDouble(sc.nextLine());
+				
+					ctrl.updateMember(new GymMember(id3,name,memberShipType,duration,fees));
+					break;
+				case 6:
+					System.out.println("Enter Id:");
+					int id1=Integer.parseInt(sc.nextLine());
+					ctrl.removeMemberById(id1);
+					break;
+				case 7:
+					ctrl.removeAllMembers();
+					break;
+				case 8:
+					ctrl.totalMember();
+					break;
+				case 9:
+					System.out.println("Enter Id:");
+					int id2=Integer.parseInt(sc.nextLine());
+					ctrl.memberExists(id2);
+					break;
+				default:
+					System.err.println("Invalid Number");	
+				}
+				
+				System.out.println("Do you want contine? (Y/N)");
+				char c=sc.nextLine().charAt(0);
+				if(Character.toUpperCase(c)=='N') isContinue=false;
+				
+			}while(isContinue);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		sc.close();
+	}
+
+}

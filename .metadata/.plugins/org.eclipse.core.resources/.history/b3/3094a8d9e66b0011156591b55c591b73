@@ -1,0 +1,10 @@
+package com.pc.service;
+
+import java.util.List;
+
+import com.pc.entity.FootballPlayer;
+
+public interface IFootballPlayerService {
+
+	List<FootballPlayer> findByClub(String club);
+}

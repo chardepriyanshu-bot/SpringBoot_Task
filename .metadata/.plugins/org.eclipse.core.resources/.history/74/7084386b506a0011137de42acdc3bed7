@@ -1,0 +1,15 @@
+package com.pc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.service.IDoctorService;
+
+@Controller
+public class DoctorController {
+
+	@Autowired
+	private IDoctorService service;
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Boot10_SpringJPA-ProductManagementSystem&apos; to &apos;Boot10_SpringJPA-ProductManagementSystem_CRUDOperation&apos;" description="Rename resource &apos;Boot10_SpringJPA-ProductManagementSystem&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Boot10_SpringJPA-ProductManagementSystem" name="Boot10_SpringJPA-ProductManagementSystem_CRUDOperation" stamp="1780059539970" updateReferences="true"/>
+</session>

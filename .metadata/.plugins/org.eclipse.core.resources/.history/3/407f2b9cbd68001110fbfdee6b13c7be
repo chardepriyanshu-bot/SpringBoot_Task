@@ -1,0 +1,13 @@
+package com.pc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.service.ICourseService;
+
+@Controller
+public class CourseController {
+	
+	@Autowired
+	private ICourseService service;
+}

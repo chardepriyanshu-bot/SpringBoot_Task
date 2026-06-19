@@ -1,0 +1,16 @@
+package com.pc;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pc.entity.Doctor;
+
+public interface IDoctorRepository extends JpaRepository<Doctor, Long> {
+	public List<Doctor>findByDoctorNameLike(String pattern)
+	public ListfindBySpecializationIn(List<String> specializations)
+	public ListfindByDoctorNameStartingWith(String prefix)
+	public ListfindByDoctorNameEndingWith(String suffix)
+	public ListfindByCityIn(List<String> cities)
+	public ListfindByHospitalNameLike(String pattern)
+	public ListfindByEmailEndingWith(String domain)
+	public ListfindBySpecializationStartingWith(String prefix)
+}

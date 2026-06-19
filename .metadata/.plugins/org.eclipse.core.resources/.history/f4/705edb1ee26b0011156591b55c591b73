@@ -1,0 +1,18 @@
+package com.pc.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="football_tb")
+public class FootballPlayer {
+	private Integer playerId;
+	private String playerName;
+	private String country;
+	private String club;
+	private String position;
+	private double salary;
+	private Integer jerseyNumber;
+}

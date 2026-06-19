@@ -1,0 +1,77 @@
+package com.pc.runner;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.CourseController;
+
+@Component
+public class CourseRunner implements CommandLineRunner {
+
+	@Autowired
+	private CourseController ctrl;
+	@Override
+	public void run(String... args) throws Exception {
+		try {
+			Scanner sc=new Scanner(System.in);
+			
+			do {
+				
+				System.out.println("""
+						1. findByCategory
+						2. findByInstructorName
+						3. findByPriceLessThan
+						4. findByPriceGreaterThan
+						5. findByDurationInHoursGreaterThan
+						6. findByRatingGreaterThanEqual
+						7. findByLanguage
+						8. findByCourseTitleContaining
+						Enter Choice: 
+						""");
+			int choice=Integer.parseInt(sc.nextLine());
+			switch(choice) {
+			case 1:
+				System.out.println("Enter category:");
+				String category=sc.nextLine();
+				ctrl.getByCategory(category);
+				break;
+			case 2:
+				System.out.println("Enter instructorName:");
+				String instructorName=sc.nextLine();
+				ctrl.getByInstructorName(instructorName);;
+				break;
+			case 3:
+				System.out.println("Enter Price:");
+				Double price=Double.parseDouble(sc.nextLine());
+				ctrl.getByPriceLessThan(price);;
+				break;
+			case 4:
+				System.out.println("Enter Price:");
+				Double price2=Double.parseDouble(sc.nextLine());
+				ctrl.getByPriceGreaterThan(price2);
+				break;
+			case 5:
+				System.out.println("Enter Hours:");
+				Integer hours=Integer.parseInt(sc.nextLine());
+				ctrl.getByDurationInHourGreater(hours);
+				break;
+			case 6:
+				System.out.println("Enter rating:");
+				Integer rating=Integer.parseInt(sc.nextLine());
+				ctrl.getByDurationInHourGreater(hours);
+				break;	
+			}
+			}while();
+			
+			
+			
+			sc.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.pc.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pc.entity.Course;
+
+public interface ICourseRepository extends JpaRepository<Course, Long> {
+	public List<Course> findByCategory(String category);
+	public List<Course> findByInstructorName(String instructorName);
+	public List<Course> findByPriceLessThan(Double price);
+	public List<Course>findByPriceGreaterThan(Double price);
+	findByDurationInHoursGreaterThan(Integer hours);
+	findByRatingGreaterThanEqual(Double rating);
+	findByLanguage(String language);
+	findByCourseTitleContaining(String keyword)
+}

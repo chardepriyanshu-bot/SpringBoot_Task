@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.pc.controller.IGymController.java&apos; to &apos;GymController.java&apos;&#x0D;&#x0A;- Original project: &apos;Boot15_Smart_Gym_Membership_Management_System&apos;&#x0D;&#x0A;- Original element: &apos;com.pc.controller.IGymController.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.pc.controller.GymController.java&apos;" description="Rename compilation unit &apos;IGymController.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.pc.controller{IGymController.java" name="GymController.java" references="false" stamp="1781272112909" version="1.0"/>
+</session>

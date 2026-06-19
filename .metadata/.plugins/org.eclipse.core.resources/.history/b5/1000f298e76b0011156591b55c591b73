@@ -1,0 +1,72 @@
+package com.pc.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.pc.entity.FootballPlayer;
+
+@Service
+public class FootBallPlayerServiceImpl implements IFootballPlayerService{
+
+	@Override
+	public List<FootballPlayer> findByClub(String club) {
+		
+		return null;
+	}
+
+	@Override
+	public List<FootballPlayer> findPlayersWithSalaryGreaterThan(Double salary) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FootballPlayer> findByPositionAndCountry(String position, String country) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FootballPlayer> findByNameStartsWith(String prefix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FootballPlayer> findByJerseyNumberBetween(Integer start, Integer end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long countPlayersByCountry(String country) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FootballPlayer> findHighestPaidPlayers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateSalary(Long id, Double salary) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteByClub(String club) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Object[]> getPlayerNameAndClub() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

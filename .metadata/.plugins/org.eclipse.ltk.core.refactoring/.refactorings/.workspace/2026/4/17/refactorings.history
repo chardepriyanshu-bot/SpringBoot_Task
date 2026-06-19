@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NotificationSystemUsingCoreAndFactoryPattern&apos; to &apos;SpringProj12-NotificationSystemUsingCoreAndFactoryPattern&apos;" description="Rename resource &apos;NotificationSystemUsingCoreAndFactoryPattern&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/NotificationSystemUsingCoreAndFactoryPattern" name="SpringProj12-NotificationSystemUsingCoreAndFactoryPattern" stamp="1776744531034" updateReferences="true"/>
+</session>

@@ -1,0 +1,9 @@
+package com.pc.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pc.entity.FootballPlayer;
+
+public interface IFootballPlayerRepository extends JpaRepository<FootballPlayer, Long> {
+	public List<FootballPlayer> findByClub(String club);
+}

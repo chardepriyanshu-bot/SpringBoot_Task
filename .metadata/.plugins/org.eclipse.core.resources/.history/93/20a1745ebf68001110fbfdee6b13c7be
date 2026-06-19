@@ -1,0 +1,30 @@
+package com.pc.runner;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.CourseController;
+
+@Component
+public class CourseRunner implements CommandLineRunner {
+
+	@Autowired
+	private CourseController ctrl;
+	@Override
+	public void run(String... args) throws Exception {
+		try {
+			Scanner sc=new Scanner(System.in);
+			
+			
+			
+			
+			sc.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

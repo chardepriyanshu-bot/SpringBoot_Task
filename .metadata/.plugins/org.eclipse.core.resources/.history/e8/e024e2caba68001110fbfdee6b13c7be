@@ -1,0 +1,19 @@
+package com.pc.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="OMS_tb")
+public class Course {
+	private Long courseId;
+	private String courseName;
+	private String category;
+	private String instructorName;
+	private Double price;
+	private Integer durationHours;
+	private Double rating;
+	private String language;
+}

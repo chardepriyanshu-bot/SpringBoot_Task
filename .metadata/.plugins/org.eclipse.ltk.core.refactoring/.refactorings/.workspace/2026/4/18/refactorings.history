@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringProj15-Online-Food-Delivery-System-Singleton-Scope&apos; to &apos;SpringProj15-FoodDeliveryScopeApp&apos;" description="Rename resource &apos;SpringProj15-Online-Food-Delivery-System-Singleton-Scope&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SpringProj15-Online-Food-Delivery-System-Singleton-Scope" name="SpringProj15-FoodDeliveryScopeApp" stamp="1777349577459" updateReferences="true"/>
+</session>

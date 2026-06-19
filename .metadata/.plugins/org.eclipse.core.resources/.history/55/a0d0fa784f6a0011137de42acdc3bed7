@@ -1,0 +1,64 @@
+package com.pc.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pc.IDoctorRepository;
+import com.pc.entity.Doctor;
+
+@Service
+public class DoctorServiceImpl implements IDoctorService {
+	
+	@Autowired
+	private IDoctorRepository repository;
+
+	@Override
+	public List<Doctor> findByDoctorNameLike(String pattern) {
+		return repository.findByDoctorNameLike(pattern);
+	}
+
+	@Override
+	public List<Doctor> findBySpecializationIn(List<String> specializations) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findByDoctorNameStartingWith(String prefix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findByDoctorNameEndingWith(String suffix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findByCityIn(List<String> cities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findByHospitalNameLike(String pattern) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findByEmailEndingWith(String domain) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> findBySpecializationStartingWith(String prefix) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

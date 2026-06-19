@@ -1,0 +1,28 @@
+package com.pc.entity;
+
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="football_tb")
+public class FootballPlayer {
+	private Integer playerId;
+	private String playerName;
+	private String country;
+	private String club;
+	private Integer position;
+	private double salary;
+	private Integer jerseyNumber;
+	
+	//Metadata
+	private Integer version;
+	@CreationTimestamp
+	private LocalDateTime createdOn;
+	private LocalDateTime updateOn;
+}

@@ -1,0 +1,16 @@
+package com.pc.service;
+
+import java.util.List;
+
+import com.pc.entity.Doctor;
+
+public interface IDoctorService {
+	public List<Doctor> findByDoctorNameLike(String pattern);
+	public List<Doctor> findBySpecializationIn(List<String> specializations);
+	public List<Doctor> findByDoctorNameStartingWith(String prefix);
+	public List<Doctor> findByDoctorNameEndingWith(String suffix);
+	public List<Doctor> findByCityIn(List<String> cities);
+	public List<Doctor> findByHospitalNameLike(String pattern);
+	public List<Doctor> findByEmailEndingWith(String domain);
+	public List<Doctor> findBySpecializationStartingWith(String prefix);
+}

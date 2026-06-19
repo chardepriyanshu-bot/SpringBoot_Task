@@ -1,0 +1,9 @@
+package com.pc.service;
+
+import java.util.List;
+
+import com.pc.entity.Course;
+
+public interface ICourseService {
+	public List<Course> getByCategory(String category);
+}

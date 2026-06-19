@@ -1,0 +1,59 @@
+package com.pc.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pc.entity.Course;
+import com.pc.repository.ICourseRepository;
+
+@Service
+public class CourseServiceImpl implements ICourseService {
+	
+	@Autowired
+	private ICourseRepository repository;
+
+	@Override
+	public List<Course> getByCategory(String category) {
+		return repository.findByCategory(category);
+	}
+
+	@Override
+	public List<Course> getByInstructorName(String instructorName) {
+		return repository.findByInstructorName(instructorName);
+	}
+
+	@Override
+	public List<Course> getByPriceLessThan(Double price) {
+		return repository.findByPriceLessThan(price);
+	}
+
+	@Override
+	public List<Course> getByPriceGreaterThan(Double price) {
+		return repository.findByPriceGreaterThan(price);
+	}
+
+	@Override
+	public List<Course> getByDurationInHoursGreaterThan(Integer hours) {
+		return repository.findByDurationInHoursGreaterThan(hours);
+	}
+
+	@Override
+	public List<Course> getByRatingGreaterThanEqual(Double rating) {
+		return repository.findByRatingGreaterThanEqual(rating);
+	}
+
+	@Override
+	public List<Course> getByLanguage(String language) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Course> getByCourseTitleContaining(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

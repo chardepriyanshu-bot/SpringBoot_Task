@@ -1,0 +1,30 @@
+package com.pc.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.pc.entity.Doctor;
+import com.pc.service.IDoctorService;
+
+@Controller
+public class DoctorController {
+
+	@Autowired
+	private IDoctorService service;
+	
+	public void findByDoctorNameLike(String pattern){
+		service.getByDoctorNameLike(pattern).forEach(System.out::println);
+	}
+	public void findBySpecializationIn(List<String> specializations){
+		service.getBySpecializationIn(specializations).forEach(System.out::println);
+	}
+	public void findByDoctorNameStartingWith(String prefix);
+	public void findByDoctorNameEndingWith(String suffix);
+	public void findByCityIn(List<String> cities);
+	public void findByHospitalNameLike(String pattern);
+	public void findByEmailEndingWith(String domain);
+	public void findBySpecializationStartingWith(String prefix);
+	
+}

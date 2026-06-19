@@ -1,0 +1,11 @@
+package com.pc.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.pc.service.IFootballPlayerService;
+
+@Controller
+public class FootballPlayerController {
+	
+	private IFootballPlayerService service;
+}

@@ -1,0 +1,14 @@
+package com.pc.runner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.FootballPlayerController;
+
+@Component
+public class FootballPlayerRunnerTest {
+	
+	@Autowired
+	private FootballPlayerController ctrl;
+	
+}

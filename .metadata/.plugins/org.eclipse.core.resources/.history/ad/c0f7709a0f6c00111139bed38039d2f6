@@ -1,0 +1,11 @@
+package com.pc.runner;
+
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.FootballPlayerController;
+
+@Component
+public class FootballPlayerRunnerTest {
+	
+	private FootballPlayerController ctrl;
+}

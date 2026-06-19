@@ -1,0 +1,104 @@
+package com.pc.runner;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.pc.controller.FootballPlayerController;
+
+@Component
+public class FootballPlayerRunnerTest implements CommandLineRunner{
+	
+	@Autowired
+	private FootballPlayerController ctrl;
+
+	@Override
+	public void run(String... args) throws Exception {
+		Scanner sc=new Scanner(System.in);
+		try {
+			boolean isContinue=true;
+			do {
+				
+				System.out.println("""
+					1. findByClub
+					2. findPlayersWithSalaryGreaterThan
+					3. findByPositionAndCountry
+					4. findByNameStartsWith 
+					5. findByJerseyNumberBetween
+					6. countPlayersByCountry
+					7. findHighestPaidPlayers
+					8. updateSalary
+					9. deleteByClub
+					10. getPlayerNameAndClub
+		
+					Enter your choice number:	
+						""");
+				Integer choice=Integer.parseInt(sc.nextLine());
+				
+				switch(choice) {
+				case 1:
+					System.out.println("Enter Doctor Name:");
+					ctrl.findByDoctorNameLike(sc.nextLine());
+					break;
+				case 2:
+					List<String> list=new LinkedList<>();
+					System.out.println("No. of Specialization want to enter:");
+					int size=Integer.parseInt(sc.nextLine());
+					System.out.println("Enter:");
+					for(int i=0;i<size;i++) {
+						list.add(sc.nextLine());
+					}
+					ctrl.findBySpecializationIn(list);
+					break;
+				case 3:
+					System.out.println("Enter Doctor First Name:");
+					ctrl.findByDoctorNameStartingWith(sc.nextLine());
+					break;
+				case 4:
+					System.out.println("Enter Doctor Last Name:");
+					ctrl.findByDoctorNameEndingWith(sc.nextLine());
+					break;
+				case 5:
+					List<String> citiesList=new LinkedList<>();
+					System.out.println("No.of city want to enter:");
+					int citySize=Integer.parseInt(sc.nextLine());
+					System.out.println("Enter:");
+					for(int i=0;i<citySize;i++) {
+						citiesList.add(sc.nextLine());
+					}
+					ctrl.findByCityIn(citiesList);
+					break;
+				case 6:
+					System.out.println("Enter Hospital Name:");
+					ctrl.findByHospitalNameLike(sc.nextLine());
+					break;
+				case 7:
+					System.out.println("Enter email ending with:");
+					ctrl.findByEmailEndingWith(sc.nextLine());
+					break;
+				case 8:
+					System.out.println("Enter Specialization starting with:");
+					ctrl.findBySpecializationStartingWith(sc.nextLine());
+					break;
+				default:
+					System.err.println("Invalid Number");	
+				}
+				
+				System.out.println("Do you want contine? (Y/N)");
+				char c=sc.nextLine().charAt(0);
+				if(Character.toUpperCase(c)=='N') isContinue=false;
+				
+			}while(isContinue);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		
+	}
+	
+	
+	
+}

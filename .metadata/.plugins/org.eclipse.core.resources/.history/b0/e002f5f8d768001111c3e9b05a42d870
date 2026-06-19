@@ -1,0 +1,25 @@
+package com.pc.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="OMS_tb")
+public class Course {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long courseId;
+	private String courseName;
+	private String category;
+	private String instructorName;
+	private Double price;
+	private Integer durationInHours;
+	private Double rating;
+	private String language;
+	private String courseTitle;
+}

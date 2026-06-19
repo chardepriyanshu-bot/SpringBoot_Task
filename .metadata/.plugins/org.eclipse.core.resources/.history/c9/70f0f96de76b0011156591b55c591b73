@@ -1,0 +1,31 @@
+package com.pc.service;
+
+import java.util.List;
+
+import org.springframework.data.repository.query.Param;
+
+import com.pc.entity.FootballPlayer;
+
+public interface IFootballPlayerService {
+
+	List<FootballPlayer> findByClub(String club);
+	List<FootballPlayer> findPlayersWithSalaryGreaterThan(Double salary);
+	 
+	List<FootballPlayer> findByPositionAndCountry(String position,
+	                                              String country);
+	 
+	List<FootballPlayer> findByNameStartsWith( String prefix);
+	 
+	List<FootballPlayer> findByJerseyNumberBetween( Integer start,
+	                                               Integer end);
+	 
+	Long countPlayersByCountry(String country);
+	 
+	List<FootballPlayer> findHighestPaidPlayers();
+
+	 
+	int updateSalary(Long id,Double salary);
+	 
+	int deleteByClub(String club);
+	List<Object[]> getPlayerNameAndClub();
+}

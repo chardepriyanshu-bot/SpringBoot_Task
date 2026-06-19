@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;applicationContext.xml&apos; to &apos;SpringProj10-CurrentDatePrinter/src/com.pc.config&apos;&#x0D;&#x0A;- Original project: &apos;SpringProj10-CurrentDatePrinter&apos;&#x0D;&#x0A;- Destination element: &apos;SpringProj10-CurrentDatePrinter/src/com.pc.config&apos;&#x0D;&#x0A;- Original element: &apos;applicationContext.xml&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src&lt;com.pc.config" element1="src/applicationContext.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1776442033431" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,30 @@
+package com.pc.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Version;
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="DMS_tb")
+public class Doctor {
+	private Integer doctorId;
+	private String doctorName;
+	private String specialization;
+	private String hospitalName;
+	private String city;
+	private Double consultationFee;
+	private Integer experience;
+	private String email;
+	
+	
+	//MetaData
+	@Version
+	private Integer version;
+	private LocalDateTime createdOn;
+	private LocalDateTime updateOn;
+	
+}

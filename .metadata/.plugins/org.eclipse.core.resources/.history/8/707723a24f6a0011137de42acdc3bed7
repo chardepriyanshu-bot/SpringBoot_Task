@@ -1,0 +1,22 @@
+package com.pc.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pc.IDoctorRepository;
+import com.pc.entity.Doctor;
+
+@Service
+public class DoctorServiceImpl implements IDoctorService {
+	
+	@Autowired
+	private IDoctorRepository repository;
+
+	@Override
+	public List<Doctor> getByDoctorNameLike(String pattern) {
+		return repository.findByDoctorNameLike(pattern);
+	}
+
+}

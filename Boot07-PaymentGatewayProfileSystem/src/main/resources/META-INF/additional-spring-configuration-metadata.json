@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "company.companyName",
+    "type": "java.lang.String",
+    "description": "A description for 'company.companyName'"
+  },
+  {
+    "name": "company.transactionLimit",
+    "type": "java.lang.String",
+    "description": "A description for 'company.transactionLimit'"
+  },
+  {
+      "name": "company.paymentType",
+      "type": "java.lang.String",
+      "description": "A description for 'company.paymentType'"
+    }
+]}
