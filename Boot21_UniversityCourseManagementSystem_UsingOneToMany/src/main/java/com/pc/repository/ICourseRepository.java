@@ -1,0 +1,9 @@
+package com.pc.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.pc.entity.Course;
+
+public interface ICourseRepository extends JpaRepository<Course, Long> {
+	
+}

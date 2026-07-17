@@ -1,0 +1,47 @@
+Question 2: Spring Boot Data JPA – Student College Management System (@ManyToOne)
+Scenario
+
+Develop a Spring Boot application for a College Management System where multiple Students belong to one College. Establish a Many-to-One relationship using Spring Data JPA.
+
+Navigation should be possible only from Student to College.
+
+College
+Field	Type
+collegeId	Long
+collegeName	String
+city	String
+
+Student
+Field	Type
+studentId	Long
+studentName	String
+branch	String
+percentage	Double
+college	College
+
+Relationship
+Use @ManyToOne in Student.
+Use @JoinColumn(name="college_id").
+Do not create @OneToMany in College.
+Use CascadeType.ALL.
+Relationship should be Unidirectional.
+
+Requirements
+Create College and Student entities.
+Configure Many-to-One mapping.
+Save multiple Students under one College.
+Retrieve Student details with College details.
+Use Repository.
+
+Display output using CommandLineRunner.
+Sample Output
+Student Details-------------
+Student Id : 1
+Student Name : Amit
+Branch : Computer Science
+Percentage : 85.5
+
+College Details-------------
+College Id : 101
+College Name : GH Raisoni College
+City : Nagpur
